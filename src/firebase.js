@@ -2,7 +2,7 @@ import { initializeApp } from 'firebase/app';
 import { getAuth } from 'firebase/auth';
 import { getFirestore } from 'firebase/firestore';
 
-// Aqui dizemos: "Se estiver rodando na Vercel, pegue das variáveis de ambiente"
+// Configuração para ler as variáveis de ambiente da Vercel (Segurança)
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
   authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
@@ -12,10 +12,7 @@ const firebaseConfig = {
   appId: process.env.REACT_APP_FIREBASE_APP_ID
 };
 
-// Inicializa o Firebase
 const app = initializeApp(firebaseConfig);
-
-// Exporta as ferramentas para o resto do app usar
 export const auth = getAuth(app);
 export const db = getFirestore(app);
-export const appId = 'default-app-id'; // Pode manter fixo por enquanto
+export const appId = 'default-app-id';
