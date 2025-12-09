@@ -1,3 +1,4 @@
+import { auth } from '../firebase';
 import React, { useState } from 'react';
 import { Mail, Lock } from 'lucide-react';
 import { 

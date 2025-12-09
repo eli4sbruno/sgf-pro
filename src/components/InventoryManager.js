@@ -1,8 +1,8 @@
+import { db, appId } from '../firebase';
 import React, { useState, useEffect } from 'react';
 import { Plus, Clock, Trash2 } from 'lucide-react';
 import { collection, addDoc, deleteDoc, doc, onSnapshot, query, serverTimestamp } from 'firebase/firestore';
 // ATUALIZADO: Importa o banco de dados e ID do app do arquivo central
-import { db, appId } from '../firebase';
 
 const formatCurrency = (value) => {
     const number = parseFloat(value);

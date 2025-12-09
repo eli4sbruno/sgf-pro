@@ -1,15 +1,9 @@
+import { auth, db, appId } from '../firebase';
 import React, { useState, useEffect } from 'react';
 import { UserCog, Users, X, Smile, Star, Zap, Coffee, Ghost, Crown } from 'lucide-react';
 import { initializeApp } from 'firebase/app';
 import { getAuth, updateProfile } from 'firebase/auth';
 import { getFirestore, collection, addDoc, deleteDoc, doc, onSnapshot, query, serverTimestamp } from 'firebase/firestore';
-
-// --- Inicialização do Firebase (Integrada) ---
-const firebaseConfig = JSON.parse(__firebase_config);
-const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
-const db = getFirestore(app);
-const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id';
 
 // --- Constantes e Utilitários (Integrados) ---
 const MASCOTS = [
